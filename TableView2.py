@@ -145,6 +145,6 @@ if __name__ == "__main__":
     ui.setupUi(Form)
     Form.show()
     timer.timer_Kicked()
-    # sys.exit(app.exec_())
-    sys.exit(ui.save_file_on_Exit())
+    sys.exit(app.exec_())
+    # sys.exit(ui.save_file_on_Exit())
 
