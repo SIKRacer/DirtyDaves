@@ -1,6 +1,12 @@
 Large,123456,22
 Medium,234515,3
-Small,392940,666
+Small,3,666
 SPRAY5,350,5 gallon spraying kit 50' hose
 SPRAY3,340,3 gallon spraying kit 50' hose
 SPRAY25, 330, 2.5 gallon spraying kit, 50 hose
+Larger,5,22
+Mediums,234515,3
+Smaller,392940,666
+SPRAY55,350,5 gallon spraying kit 50' hose
+SPRAY35,340,3 gallon spraying kit 50' hose
+SPRAY255, 330, 2.5 gallon spraying kit, 50 hose

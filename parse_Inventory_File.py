@@ -70,16 +70,67 @@ class document_Parse():
     #
     #     return list_of_Items[Row]
 
-    def Row_and_Column(self, Row, Column):
+    def Row_and_Column(self, Row):
         row_now_Get_Line = self.open_File_Return_Line(Row)
         correct_Value = row_now_Get_Line.split(',')
-        return correct_Value[Column]
+        return correct_Value
+
+    def get_item_return_quantity(self, item):
+        # row_now_Get_Line = self.open_File_Return_Line(Row)
+        # correct_Value = row_now_Get_Line.split(',')
+        with open("Spring.txt") as e:
+            for line in e:
+
+                if line.__contains__(item):
+                    inventory_after = line.split(",")
+                    postion = inventory_after.index(item)
+                    # postion = inventory_after.__getattribute__(item)
+                    return inventory_after[postion + 1]
+        # return correct_Value[Column]
+
+    def replace_Quantity_In_File(self, old_Amount, new_Amount, item):
+        # with open("Spring.txt", 'w') as e:
+        #     for line in e:
+        #
+        #         if line.__contains__(old_Amount):
+        #             inventory_after = line.split(",")
+        #             print(inventory_after)
+        #             # postion = inventory_after.(item)
+        #             # e.write(line.replace(old_Amount, new_Amount))
+        filefound = open("Spring.txt", "r")
+        book = filefound.readlines()
+        for x in book:
+            # print(x)
+            if x.__contains__(item):
+                for blah in x:
+                    if blah.__contains__(item):
+                        blah.replace(old_Amount, new_Amount)
+        # print(book)
 
     def open_File_Return_Line(self, line_Row):
+        try:
+            file = open("Spring.txt", "r")
+            give_Line = file.read().splitlines()
+            # print(give_Line[line_Row])
+            #TODO: Catch error that is returned here when the file is empty
+            return give_Line[line_Row]
+        except:
+            print("Your file might be Empty!")
+
+    def find_Item_Quantity(self, items):
+        return items[1]
+
+    def find_Item_Name(self, name):
+        return name[0]
+
+    def find_Item_Description(self, destcription):
+        return destcription[2]
+
+    def how_many_lines(self):
         file = open("Spring.txt", "r")
-        give_Line = file.read().splitlines()
-        # print(give_Line[line_Row])
-        return give_Line[line_Row]
+        count = file.readlines()
+        return len(count)
+
 
 
 
@@ -90,4 +141,4 @@ run = document_Parse()
 # run.grab_InventoryLine()
 # run.again_Lets_Get_Inventory()
 # run.give_back_based_on_Row_Column(1)
-run.Row_and_Column(1,1)
+# run.Row_and_Column(1,1)
